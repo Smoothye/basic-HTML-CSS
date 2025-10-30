@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Tektur";
+    src: url(../fonts/Tektur-VariableFont_wdth\,wght.ttf);
+}
+
+:root {
+
+    font-family: "Tektur";
+
+    /* defining color palette */
+    --color-bg: #20252A;
+    --color-fg: #6D6DC5;
+    --color-white: #E2E6E9;
+    --color-accents: #084444;
+}
+
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: var(--color-fg);
+
+    font-size: 2rem;
+
+    min-height: 3em;
+}
