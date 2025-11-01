@@ -5,13 +5,22 @@
 
 :root {
 
+    /* global settings */
     font-family: "Tektur";
+    color: var(--color-white);
+    scroll-behavior: smooth;
+    scroll-padding: 10px;
+
+    background-color: var(--color-bg);
+
+    /* navbar */
+    --navbar-height: 4rem;
 
     /* defining color palette */
     --color-bg: #20252A;
-    --color-fg: #6D6DC5;
     --color-white: #E2E6E9;
-    --color-accents: #084444;
+    --color-accent-1: #084444;
+    --color-accent-2: #6D6DC5;
 }
 
 *, ::after, ::before {
@@ -19,11 +28,56 @@
     margin: 0;
     box-sizing: border-box;
 }
+a { all: unset; cursor: pointer; }
+
+body {
+    font-size: 0;
+}
 
 nav {
-    background-color: var(--color-fg);
+    background-color: var(--color-bg);
+    position: fixed;
 
-    font-size: 2rem;
+    font-size: 1.4rem;
+    min-height: var(--navbar-height);
+    min-width: 100%;
 
-    min-height: 3em;
+    padding: 0 20px; /* padding: top_&_bottom right_&_left */
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 8px solid var(--color-accent-1);
 }
+
+.nav-buttons {
+
+    flex-grow: 1;
+    text-align: right;
+}
+.nav-buttons a {
+    margin-left: 16px;
+}
+
+.bg-img {
+    margin-top: var(--navbar-height);
+    width: 100%;
+}
+
+main {
+    min-height: 50vh;
+    max-width: 70vw;
+
+    margin: 0 auto;
+    padding: 20px 20px;
+
+    font-size: initial;
+
+    box-shadow: 0 0 10px var(--color-accent-1);
+}
+
+span.accent-2 { color: var(--color-accent-2); }
+
+#introduction-section h1 { text-align: center; }
+
+#introduction-section p { margin: 16px 0; }
