@@ -32,6 +32,12 @@ a { all: unset; cursor: pointer; display: inline-block; }
 
 body { font-size: 0; }
 body > * { font-size: initial; }
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto min-content;
+    min-height: 100vh;
+}
 
 nav {
     background-color: var(--color-bg);
@@ -100,7 +106,10 @@ span.accent-2 { color: var(--color-accent-2); }
 }
 .btn-animated:hover { transform: scale(1.1); }
 
-footer { margin-top: 4ex; }
+footer {
+    margin-top: 4ex;
+    height: min-content;
+}
 
 #socials-section {
     display: flex;
@@ -126,3 +135,69 @@ footer { margin-top: 4ex; }
     filter: invert(1);
     margin-right: 4px;
 }
+
+.planets-grid {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+x-deselect-radio {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+x-deselect-radio input { display: none; }
+x-deselect-radio label {
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+}
+.planets-grid:has(.card input:checked) x-deselect-radio { display: block !important; }
+
+.card {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--color-accent-2);
+}
+.card input { display: none; }
+.card label {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+}
+.card img {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.card .info {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    aspect-ratio: 2 / 1;
+    width: clamp(300px, 100px + 50vw, 600px);
+    height: auto;
+
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-accent-1);
+
+    padding: 20px 10px;
+    
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.card:has(input:checked) .info { display: flex; }
