@@ -209,6 +209,7 @@ There are also functions such as [min()](https://developer.mozilla.org/en-US/doc
 For responsive texts or lengths you can use the following site, which gives you a `clamp` function.
 [Fluid Style](https://fluid.style/)
 <iframe width="100%" height="300" src="https://fluid.style/"></iframe>
+
 You can also use the `@media` at-rule to define styles depending on **screen sizes**, **orientation** and others, but these 2 are the most used ones.
 For example the following style applies only on devices with a screen width smaller than 550px
 ```css
