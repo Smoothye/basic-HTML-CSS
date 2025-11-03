@@ -3,24 +3,28 @@
     src: url(../fonts/Tektur-VariableFont_wdth\,wght.ttf);
 }
 
-:root {
+@view-transition {
+    navigation: auto;
+}
 
-    /* global settings */
-    font-family: "Tektur";
-    color: var(--color-white);
-    scroll-behavior: smooth;
-    scroll-padding: 10px;
+@keyframes slide {
 
-    background-color: var(--color-bg);
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-200px);
+        opacity: 0;
+   }
+}
 
-    /* navbar */
-    --navbar-height: 4rem;
+::view-transition-old(root) {
+  animation: 0.4s ease-in both slide;
+}
 
-    /* defining color palette */
-    --color-bg: #20252A;
-    --color-white: #E2E6E9;
-    --color-accent-1: #084444;
-    --color-accent-2: #6D6DC5;
+::view-transition-new(root) {
+  animation: 0.4s 0.3s ease-in reverse both slide;
 }
 
 *, ::after, ::before {
