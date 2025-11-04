@@ -231,6 +231,10 @@ It can very easily be implemented using the `@view-transition` at-rule and creat
     navigation: auto;
 }
 
+:root {
+    view-transition-name: root; /* the name can be anything you want */
+}
+
 @keyframes slide {
 
     from {
