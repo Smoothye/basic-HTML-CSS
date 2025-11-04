@@ -220,3 +220,34 @@ For example the following style applies only on devices with a screen width smal
     }
 }
 ```
+
+## View Transition API
+
+The view transition api is used to create animations between page changes or components, this way implementing a Single Page Application (SPA)
+
+It can very easily be implemented using the `@view-transition` at-rule and creating an animation.
+```css
+@view-transition {
+    navigation: auto;
+}
+
+@keyframes slide {
+
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-200px);
+        opacity: 0;
+   }
+}
+
+::view-transition-old(root) {
+  animation: 0.4s ease-in both slide;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s 0.3s ease-in reverse both slide;
+}
+```

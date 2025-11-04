@@ -7,6 +7,25 @@
     navigation: auto;
 }
 
+:root {
+    /* global settings */
+    font-family: "Tektur";
+    color: var(--color-white);
+    scroll-behavior: smooth;
+    scroll-padding: 10px;
+
+    background-color: var(--color-bg);
+
+    /* navbar */
+    --navbar-height: 4rem;
+
+    /* defining color palette */
+    --color-bg: #20252A;
+    --color-white: #E2E6E9;
+    --color-accent-1: #084444;
+    --color-accent-2: #6D6DC5;
+}
+
 @keyframes slide {
 
     from {
