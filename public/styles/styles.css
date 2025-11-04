@@ -24,6 +24,8 @@
     --color-white: #E2E6E9;
     --color-accent-1: #084444;
     --color-accent-2: #6D6DC5;
+
+    view-transition-name: root;
 }
 
 @keyframes slide {
