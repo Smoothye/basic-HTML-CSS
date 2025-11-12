@@ -1,6 +1,6 @@
 # Basic HTML & CSS training
 
-Introductory materials about how to get started with writing HTML & CSS
+Introductory  materials about how to get started with writing HTML & CSS
 
 # 1. Structure
 
